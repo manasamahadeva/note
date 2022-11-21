@@ -1,0 +1,62 @@
+import matplotlib
+from matplotlib import pyplot as plt
+
+import seaborn as sns
+import pandas as pd
+import math
+import numpy as np
+
+df=pd.read_csv("cars93.csv.xls")
+df=df.head()
+fig=plt.figure()
+plt.title("Price Range of Car")
+sns.boxplot(df["Price"])
+
+print(np.min(df.price))
+print(np.max(df.price))
+print(np.std(df.price))
+print(np.mean(df.price))
+print(np.median(df.price))
+
+
+import matplotlib
+from matplotlib import pyplot as plt
+
+import seaborn as sns
+import pandas as pd
+
+df=pd.read_csv("cars93.csv.xls")
+mode1=df['MPG_city'].mode()
+print("Highest frequency : ",mode1)
+fig=plt.figure()
+x=df.MPG_city
+plt.title("Frequency distribution")
+plt.xlabel("MPG_city")
+plt.hist(x, bins=5, edgecolor="black")
+
+
+
+import matplotlib
+from matplotlib import pyplot as plt
+import pandas as pd
+
+fig=plt.figure()
+x=df.Horsepower
+y=df.MPG_city
+plt.title("Sactter")
+plt.scatter(x,y)
+
+import matplotlib
+from matplotlib import pyplot as plt
+import pandas as pd
+
+df=df.head()
+
+fig=plt.figure()
+x=df.EngineSize
+y=df.Horsepower
+plt.title("Variations between Enginesize and Horsepower")
+plt.plot(x,y)
+
+
+
